@@ -1,0 +1,3 @@
+[submodule "nvim/nvim-config"]
+	path = nvim/nvim-config
+	url = https://github.com/tpAtalas/tp-neovim-config.git
