@@ -75,7 +75,7 @@ return {
 	allow_square_glyphs_to_overflow_width = "Never",
 	window_background_opacity = 0.7,
 	-- Underline
-	underline_position = -4,
+	underline_position = -2,
 	underline_thickness = 2,
 	-- text_background_opacity = 0.55,
 	adjust_window_size_when_changing_font_size = true,
