@@ -20,14 +20,11 @@ customCommands:
     loadingText: "Pruning..."
     description: "fetch prune origin"
   - key: "N"
-    description: "create local branch with options"
-    command: "git branch {{if index .PromptResponses 0}}{{index .PromptResponses 0}}/{{end}}{{if index .PromptResponses 1}}{{index .PromptResponses 1}}/{{end}}{{index .PromptResponses 2}}"
+    description: "create local wip branch"
+    command: "git branch {{if index .PromptResponses 0}}{{index .PromptResponses 0}}/{{end}}{{index .PromptResponses 1}}"
     context: "localBranches"
     loadingText: "Creating branch..."
     prompts:
-      - type: "input"
-        title: "What is the author's name? (Enter to skip)"
-        initialValue: ""
       - type: "menu"
         title: "What kind of branch is it?"
         options:
