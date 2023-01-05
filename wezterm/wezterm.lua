@@ -102,7 +102,7 @@ return {
 	-- Tab_bar
 	enable_tab_bar = true,
 	use_fancy_tab_bar = false,
-	tab_max_width = 30,
+	tab_max_width = 50,
 	-- colors
 	colors = {
 		background = "#1a1b26",
