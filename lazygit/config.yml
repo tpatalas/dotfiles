@@ -11,7 +11,7 @@ customCommands:
     context: "global"
     subprocess: true
   - key: "r"
-    comand: "git submodule update --remote"
+    command: "git submodule update --remote"
     context: "submodules"
     description: "update remote submodule"
   - key: "<c-f>"
