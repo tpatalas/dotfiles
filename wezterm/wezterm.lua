@@ -81,7 +81,7 @@ return {
 	adjust_window_size_when_changing_font_size = true,
 	window_decorations = "RESIZE",
 	window_padding = {
-		left = 1,
+		left = 2,
 		right = 0,
 		top = 0,
 		bottom = 0,
