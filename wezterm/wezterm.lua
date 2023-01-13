@@ -37,36 +37,13 @@ return {
 	-- term = "xterm-256color",
 	term = "wezterm",
 	-- Font
-	font = wezterm.font("MesloLGS NF", { weight = "Regular", italic = false }),
-	font_antialias = "Greyscale",
+	-- More NerdFont: https://www.nerdfonts.com/font-downloads
+	font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Regular", italic = false }),
 	font_shaper = "Harfbuzz",
-	font_rules = {
-		{
-			intensity = "Half",
-			italic = true,
-			font = wezterm.font({
-				family = "MesloLGS NF",
-			}),
-		},
-		{
-			intensity = "Bold",
-			italic = false,
-			font = wezterm.font({
-				family = "MesloLGS NF",
-			}),
-		},
-		{
-			intensity = "Normal",
-			italic = true,
-			font = wezterm.font({
-				family = "MesloLGS NF",
-			}),
-		},
-	},
 	bold_brightens_ansi_colors = true,
-	font_size = 16,
-	cell_width = 0.95,
-	line_height = 1.00,
+	font_size = 17,
+	cell_width = 1.00,
+	line_height = 1.20,
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
@@ -75,7 +52,7 @@ return {
 	allow_square_glyphs_to_overflow_width = "Never",
 	window_background_opacity = 0.7,
 	-- Underline
-	underline_position = -2,
+	underline_position = -5,
 	underline_thickness = 2,
 	-- text_background_opacity = 0.55,
 	adjust_window_size_when_changing_font_size = true,
@@ -86,6 +63,7 @@ return {
 		top = 0,
 		bottom = 0,
 	},
+	audible_bell = "Disabled",
 	window_frame = {
 		border_left_width = "0cell",
 		border_right_width = "0cell",
