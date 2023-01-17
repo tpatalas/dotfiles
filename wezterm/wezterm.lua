@@ -38,7 +38,7 @@ return {
 	term = "wezterm",
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
-	font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Regular", italic = false }),
+	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium", italic = false }),
 	font_shaper = "Harfbuzz",
 	bold_brightens_ansi_colors = true,
 	font_size = 17,
