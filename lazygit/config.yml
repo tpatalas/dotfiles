@@ -25,7 +25,7 @@ customCommands:
     context: "localBranches"
     loadingText: "Creating branch..."
     prompts:
-      - type: "menuFromCommand"
+      - type: "menu"
         title: "What kind of branch is it?"
         options:
           - name: "feature"
