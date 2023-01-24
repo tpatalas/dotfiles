@@ -1,3 +1,5 @@
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
 customCommands:
   - key: "<c-r>"
     command: 'hub browse -- "commit/{{.SelectedLocalCommit.Sha}}"'
@@ -19,6 +21,18 @@ customCommands:
     context: "localBranches"
     loadingText: "Pruning..."
     description: "fetch prune origin"
+  - key: "i"
+    command: "git rebase -i {{.SelectedLocalCommit.Sha}}"
+    context: "commits"
+    loadingText: "Rebasing..."
+    description: "Interactive rebase with editor starting from the next commit"
+    subprocess: true
+  - key: "I"
+    command: "git rebase -i {{.SelectedLocalCommit.Sha}}~1"
+    context: "commits"
+    loadingText: "Rebasing..."
+    description: "Interactive rebase with editor starting from the current commit"
+    subprocess: true
   - key: "N"
     description: "Create local wip branch"
     command: "git branch {{if index .PromptResponses 0}}{{index .PromptResponses 0}}/{{end}}{{index .PromptResponses 1}}"
