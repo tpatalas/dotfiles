@@ -68,7 +68,7 @@ customCommands:
         body: "Are you sure you want to remove description?"
   - key: "e"
     description: "Add/edit a branch description"
-    command: "git branch --edit-description"
+    command: "git branch --edit-description {{.SelectedLocalBranch.Name}}"
     context: "localBranches"
     loadingText: "Opening editor..."
     subprocess: true
