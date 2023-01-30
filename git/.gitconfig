@@ -8,3 +8,5 @@
 	required = true
 [core]
 	editor = nvim
+[commit]
+	template = ~/.gitcommit.txt
