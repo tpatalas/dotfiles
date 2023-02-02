@@ -1,5 +1,7 @@
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
+gui:
+  windowSize: "half" # one of 'normal' | 'half' | 'full' default is 'normal'
 customCommands:
   - key: "<c-r>"
     command: 'hub browse -- "commit/{{.SelectedLocalCommit.Sha}}"'
