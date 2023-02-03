@@ -1,22 +1,27 @@
 
-# Write your commit message above. 
+# See how a minor change to your commit message style can make you a better programmer.
 #
+# Format: <type>(<scope>): <subject>
 #
-##########
-## Type ##
-##########
-# Must be one of the following:
+# <scope> is optional
+# 
+# Example
+# feat: add hat wobble
+# ^--^  ^------------^
+# |     |
+# |     +-> Summary in present tense.
+# |
+# +-------> Type: chore, docs, feat, fix, refactor, style, or test.
+# More Examples:
+# feat: (new feature for the user, not a new feature for build script)
+# fix: (bug fix for the user, not a fix to a build script)
+# docs: (changes to the documentation)
+# style: (formatting, missing semi colons, etc; no production code change)
+# refactor: (refactoring production code, eg. renaming a variable)
+# test: (adding missing tests, refactoring tests; no production code change)
+# chore: (updating grunt tasks etc; no production code change)
 #
-# build: Changes that affect the build system or external dependencies
-# (example scopes: gulp, broccoli, npm)
-# ci: Changes to our CI configuration files and scripts (examples:
-# CircleCi, SauceLabs)
-# docs: Documentation only changes
-# feat: A new feature
-# fix: A bug fix
-# perf: A code change that improves performance
-# refactor: A code change that neither fixes a bug nor adds a feature
-# test: Adding missing tests or correcting existing tests
-#
-# More Info: https://github.com/angular/angular/blob/main/CONTRIBUTING.md#type
+# More Info: 
+# https://github.com/angular/angular/blob/main/CONTRIBUTING.md#type
+# https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
 # Config custom gitcommit: git config --global commit.template ~/.gitcommit.txt
