@@ -59,7 +59,7 @@ return {
 	underline_position = -5,
 	underline_thickness = 2,
 	-- text_background_opacity = 0.55,
-	adjust_window_size_when_changing_font_size = true,
+	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "RESIZE",
 	window_padding = {
 		left = 2,
@@ -87,7 +87,13 @@ return {
 	tab_max_width = 50,
 	-- colors
 	colors = {
-		background = "#1a1b26",
+		foreground = "#c8d3f5",
+		background = "#222436",
+		cursor_bg = "#c8d3f5",
+		cursor_border = "#c8d3f5",
+		cursor_fg = "#222436",
+		selection_bg = "#3654a7",
+		selection_fg = "#c8d3f5",
 		tab_bar = {
 			background = "None",
 			active_tab = {
@@ -121,8 +127,6 @@ return {
 				italic = false,
 			},
 		},
-		cursor_bg = "gold",
-		cursor_border = "None",
 	},
 	-- Cursor
 	default_cursor_style = "BlinkingBar",
