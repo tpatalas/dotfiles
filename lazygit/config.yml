@@ -2,6 +2,23 @@
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
 gui:
   windowSize: "half" # one of 'normal' | 'half' | 'full' default is 'normal'
+  timeFormat: "Jan 02 06" # https://pkg.go.dev/time#Time.Format
+  branchColors:
+    "master": "#1abc9c"
+    "assets": "#737aa2"
+    "docs": "#bb9af7"
+    "experimental": "#e0af68"
+    "release": "#0db9d7"
+    "testing": "#db4b4b"
+    "feature": "#b4f9f8"
+  authorColors:
+    "*": "#636da6"
+  showIcons: true
+  theme:
+    selectedLineBgColor:
+      - "#2f334d" # set to `default` to have no background colour
+git:
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:meidum --oneline {{branchName}} --"
 customCommands:
   - key: "<c-r>"
     command: 'hub browse -- "commit/{{.SelectedLocalCommit.Sha}}"'
