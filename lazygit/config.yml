@@ -16,7 +16,7 @@ gui:
   showIcons: true
   theme:
     selectedLineBgColor:
-      - "#2f334d" # set to `default` to have no background colour
+      - "#51566F" # set to `default` to have no background colour
 git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:meidum --oneline {{branchName}} --"
 customCommands:

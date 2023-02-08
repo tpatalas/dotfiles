@@ -39,8 +39,8 @@ return {
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
-		"JetBrainsMono Nerd Font",
-		"FiraCode Nerd Font",
+		"JetBrainsMonoNL Nerd Font",
+		"FiraCodeNL Nerd Font",
 		"Symbols Nerd Font",
 	}),
 	font_shaper = "Harfbuzz",
@@ -218,6 +218,11 @@ return {
 			key = "DownArrow",
 			mods = "CTRL|SHIFT",
 			action = wezterm.action.ActivatePaneDirection("Down"),
+		},
+		{
+			key = "`",
+			mods = "CTRL|CMD",
+			action = wezterm.action.ActivatePaneDirection("Next"),
 		},
 	},
 }
