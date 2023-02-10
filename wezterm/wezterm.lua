@@ -54,7 +54,7 @@ return {
 		brightness = 1.0,
 	},
 	allow_square_glyphs_to_overflow_width = "Never",
-	window_background_opacity = 0.7,
+	window_background_opacity = 0.8,
 	-- Underline
 	underline_position = -5,
 	underline_thickness = 2,
