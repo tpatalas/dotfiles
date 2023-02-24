@@ -18,7 +18,9 @@ gui:
     selectedLineBgColor:
       - "#51566F" # set to `default` to have no background colour
 git:
-  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:meidum --oneline {{branchName}} --"
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline {{branchName}} --"
+  skipHookPrefix: WIP
+  parseEmoji: true
 customCommands:
   - key: "<c-r>"
     command: 'hub browse -- "commit/{{.SelectedLocalCommit.Sha}}"'
