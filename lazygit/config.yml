@@ -2,7 +2,7 @@
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
 gui:
   windowSize: "half" # one of 'normal' | 'half' | 'full' default is 'normal'
-  timeFormat: "Jan 02 06" # https://pkg.go.dev/time#Time.Format
+  timeFormat: "" # https://pkg.go.dev/time#Time.Format
   branchColors:
     "master": "#1abc9c"
     "assets": "#737aa2"
@@ -16,7 +16,7 @@ gui:
   showIcons: true
   theme:
     selectedLineBgColor:
-      - "#51566F" # set to `default` to have no background colour
+      - "#51566F" # set to `default` to have no background color
 git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline {{branchName}} --"
   skipHookPrefix: WIP
