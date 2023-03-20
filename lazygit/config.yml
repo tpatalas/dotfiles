@@ -7,7 +7,7 @@ gui:
     "master": "#1abc9c"
     "assets": "#737aa2"
     "docs": "#bb9af7"
-    "develop": "#e0af68"
+    "develop": "#82aaff"
     "release": "#0db9d7"
     "testing": "#db4b4b"
     "feature": "#b4f9f8"
