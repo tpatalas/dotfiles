@@ -54,6 +54,20 @@ customCommands:
     loadingText: "Rebasing..."
     description: "Interactive rebase with editor starting from the current commit"
     subprocess: true
+  - key: "r"
+    command: "git rebase {{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}"
+    context: "localBranches"
+    loadingText: "Rebasing branch..."
+    prompts:
+      - type: "menu"
+        title: "How would like to rebase?"
+        options:
+          - name: "rebase"
+            description: "     Without preserving merge commits"
+            value: ""
+          - name: "rebase merge"
+            description: "     Preserve merge commits"
+            value: "--rebase-merges"
   - key: "N"
     description: "Create local wip branch"
     command: "git branch {{if index .PromptResponses 0}}{{index .PromptResponses 0}}/{{end}}{{index .PromptResponses 1}}"
