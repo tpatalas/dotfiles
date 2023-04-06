@@ -39,16 +39,16 @@ return {
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
-		{ family = "Iosevka Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" } },
 		{ family = "JetBrainsMonoNL Nerd Font" },
+		{ family = "Iosevka Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" } },
 		{ family = "Fira Code" },
 		"Symbols Nerd Font",
 	}),
 	font_shaper = "Harfbuzz",
 	bold_brightens_ansi_colors = "BrightOnly",
-	font_size = 20,
-	cell_width = 1.10,
-	line_height = 1.35,
+	font_size = 18.5,
+	cell_width = 1.00,
+	line_height = 1.25,
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
