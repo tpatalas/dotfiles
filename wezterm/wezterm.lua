@@ -45,9 +45,9 @@ return {
 	}),
 	font_shaper = "Harfbuzz",
 	bold_brightens_ansi_colors = "BrightOnly",
-	font_size = 18,
+	font_size = 19,
 	cell_width = 1.00,
-	line_height = 1.25,
+	line_height = 1.35,
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
