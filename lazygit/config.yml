@@ -11,6 +11,7 @@ gui:
     "release": "#0db9d7"
     "testing": "#db4b4b"
     "feature": "#b4f9f8"
+    "to-do": "#646DA4"
   authorColors:
     "*": "#636da6"
   showIcons: true
@@ -23,22 +24,32 @@ git:
   parseEmoji: true
 customCommands:
   - key: "L"
-    command: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline {{.SelectedLocalBranch.Name}}"
+    command: "git {{if .SelectedFile.HasUnstagedChanges}} diff --color {{.SelectedFile.Name}} {{else}} diff --staged --color {{.SelectedFile.Name}} {{end}} "
+    context: "files"
+    description: "Open git diff with subprocess"
+    subprocess: true
+  - key: "l"
+    command: "git {{if .SelectedFile.HasUnstagedChanges}} diff --color {{.SelectedFile.Name}} {{else}} diff --staged --color {{.SelectedFile.Name}} {{end}} "
+    context: "files"
+    description: "Open git diff with prompt"
+    showOutput: true
+  - key: "L"
+    command: "git log --graph --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline --color {{.SelectedLocalBranch.Name}}"
     context: "localBranches"
     description: "Open git log with subprocess"
     subprocess: true
   - key: "l"
-    command: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline {{.SelectedLocalBranch.Name}}"
+    command: "git log --graph --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline --color {{.SelectedLocalBranch.Name}}"
     context: "localBranches"
     description: "Open git log with prompt"
     showOutput: true
   - key: "L"
-    command: "git show {{.SelectedLocalCommit.Sha}}"
+    command: "git show --pretty=fuller --color {{.SelectedLocalCommit.Sha}}"
     context: "commits"
     description: "Open git log with subprocess"
     subprocess: true
   - key: "l"
-    command: "git show --pretty=fuller {{.SelectedLocalCommit.Sha}}"
+    command: "git show --pretty=fuller --color {{.SelectedLocalCommit.Sha}}"
     context: "commits"
     description: "Open git log with prompt"
     showOutput: true
@@ -49,6 +60,14 @@ customCommands:
     command: "git {{if .SelectedFile.HasUnstagedChanges}} add {{else}} reset {{end}} {{.SelectedFile.Name | quote}}"
     context: "files"
     description: "toggle file staged"
+  - key: "<c-c>"
+    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --ancestry-path --merges --pretty=format:"%h - %s" | grep -E "\(#\d+\)" | pbcopy'
+    description: "Copy all merged commits messages with ticket number"
+    context: "localBranches"
+  - key: "<c-x>"
+    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --ancestry-path --merges --pretty=format:"%h - %s" | pbcopy'
+    description: "Copy all merged commits messages"
+    context: "localBranches"
   - key: "C"
     command: "git commit"
     context: "global"
@@ -77,6 +96,7 @@ customCommands:
   - key: "r"
     command: "git rebase {{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}"
     context: "localBranches"
+    description: "Rebase options"
     loadingText: "Rebasing branch..."
     prompts:
       - type: "menu"
@@ -116,6 +136,9 @@ customCommands:
           - name: "docs"
             description: "   a docs branch"
             value: "docs"
+          - name: "to-do"
+            description: "   a to-do branch. Local only"
+            value: "to-do"
       - type: "input"
         title: "What is the description of branch?"
         initialValue: ""
