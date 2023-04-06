@@ -40,14 +40,14 @@ return {
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
 		"JetBrainsMonoNL Nerd Font",
-		"FiraCodeNL Nerd Font",
+		"FiraCode Nerd Font",
 		"Symbols Nerd Font",
 	}),
 	font_shaper = "Harfbuzz",
 	bold_brightens_ansi_colors = "BrightOnly",
-	font_size = 19,
+	font_size = 18.5,
 	cell_width = 1.00,
-	line_height = 1.35,
+	line_height = 1.25,
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
@@ -55,7 +55,7 @@ return {
 	},
 	allow_square_glyphs_to_overflow_width = "Never",
 	window_background_opacity = 0.5,
-	macos_window_background_blur = 10,
+	macos_window_background_blur = 15,
 	underline_position = -6,
 	underline_thickness = 2,
 	adjust_window_size_when_changing_font_size = false,
