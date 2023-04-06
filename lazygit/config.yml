@@ -1,8 +1,8 @@
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
 gui:
-  windowSize: "half" # one of 'normal' | 'half' | 'full' default is 'normal'
-  timeFormat: "" # https://pkg.go.dev/time#Time.Format
+  windowSize: "full" # one of 'normal' | 'half' | 'full' default is 'normal'
+  timeFormat: "02 Jan 06 15:04 MST" # https://pkg.go.dev/time#Time.Format
   branchColors:
     "master": "#1abc9c"
     "assets": "#737aa2"
@@ -22,6 +22,26 @@ git:
   skipHookPrefix: WIP
   parseEmoji: true
 customCommands:
+  - key: "L"
+    command: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline {{.SelectedLocalBranch.Name}}"
+    context: "localBranches"
+    description: "Open git log with subprocess"
+    subprocess: true
+  - key: "l"
+    command: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline {{.SelectedLocalBranch.Name}}"
+    context: "localBranches"
+    description: "Open git log with prompt"
+    showOutput: true
+  - key: "L"
+    command: "git show {{.SelectedLocalCommit.Sha}}"
+    context: "commits"
+    description: "Open git log with subprocess"
+    subprocess: true
+  - key: "l"
+    command: "git show --pretty=fuller {{.SelectedLocalCommit.Sha}}"
+    context: "commits"
+    description: "Open git log with prompt"
+    showOutput: true
   - key: "<c-r>"
     command: 'hub browse -- "commit/{{.SelectedLocalCommit.Sha}}"'
     context: "commits"
@@ -62,12 +82,13 @@ customCommands:
       - type: "menu"
         title: "How would like to rebase?"
         options:
-          - name: "rebase"
-            description: "     Without preserving merge commits"
-            value: ""
           - name: "rebase merge"
             description: "     Preserve merge commits"
             value: "--rebase-merges"
+          - name: "rebase"
+            description: "     Without preserving merge commits"
+            value: ""
+
   - key: "N"
     description: "Create local wip branch"
     command: "git branch {{if index .PromptResponses 0}}{{index .PromptResponses 0}}/{{end}}{{index .PromptResponses 1}}"
