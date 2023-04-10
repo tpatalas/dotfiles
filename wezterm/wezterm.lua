@@ -59,7 +59,7 @@ return {
 	underline_position = -6,
 	underline_thickness = 2,
 	adjust_window_size_when_changing_font_size = false,
-	window_decorations = "RESIZE",
+	window_decorations = "INTEGRATED_BUTTONS",
 	window_padding = {
 		left = 5,
 		right = 0,
@@ -84,6 +84,7 @@ return {
 	enable_tab_bar = true,
 	use_fancy_tab_bar = false,
 	tab_max_width = 50,
+	tab_bar_at_bottom = false,
 	-- colors
 	colors = {
 		foreground = "#c8d3f5",
@@ -94,9 +95,9 @@ return {
 		selection_bg = "#3654a7",
 		selection_fg = "#c8d3f5",
 		tab_bar = {
-			background = "None",
+			background = "#202124",
 			active_tab = {
-				bg_color = "None",
+				bg_color = "#35363A",
 				fg_color = "#7BC6C7",
 				intensity = "Bold",
 				underline = "None",
@@ -104,7 +105,7 @@ return {
 				strikethrough = false,
 			},
 			inactive_tab = {
-				bg_color = "None",
+				bg_color = "#202124",
 				fg_color = "#758299",
 				intensity = "Normal",
 				underline = "None",
@@ -112,16 +113,16 @@ return {
 				strikethrough = false,
 			},
 			inactive_tab_hover = {
-				bg_color = "None",
+				bg_color = "#202124",
 				fg_color = "#3b3052",
 				italic = false,
 			},
 			new_tab = {
-				bg_color = "None",
+				bg_color = "#202124",
 				fg_color = "#808080",
 			},
 			new_tab_hover = {
-				bg_color = "#3b3052",
+				bg_color = "#202124",
 				fg_color = "#3b3052",
 				italic = false,
 			},
