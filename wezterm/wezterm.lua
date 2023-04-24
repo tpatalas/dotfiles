@@ -16,7 +16,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local proc = basename(tab.active_pane.foreground_process_name)
 	local cwd = convert_homedir(tab.active_pane.current_working_dir:gsub("^file://", ""))
 	cwd = basename(cwd)
-	local title = "  [" .. tab.tab_index + 1 .. "]" .. cwd .. ":" .. proc .. " "
+	local title = " [" .. tab.tab_index + 1 .. "]" .. cwd .. ":" .. proc .. " "
 	return {
 		{ Text = wezterm.truncate_right(title, max_width) },
 	}
@@ -40,14 +40,15 @@ return {
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
 		"JetBrainsMonoNL Nerd Font",
+		{ family = "Iosevka Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" } },
 		"FiraCode Nerd Font",
 		"Symbols Nerd Font",
 	}),
 	font_shaper = "Harfbuzz",
 	bold_brightens_ansi_colors = "BrightOnly",
 	font_size = 18.5,
-	cell_width = 1.00,
-	line_height = 1.25,
+	-- cell_width = 1.00,
+	line_height = 1.09,
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
@@ -56,7 +57,7 @@ return {
 	allow_square_glyphs_to_overflow_width = "Never",
 	window_background_opacity = 0.5,
 	macos_window_background_blur = 15,
-	underline_position = -6,
+	underline_position = -3.5,
 	underline_thickness = 2,
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "INTEGRATED_BUTTONS",
@@ -114,7 +115,7 @@ return {
 			},
 			inactive_tab_hover = {
 				bg_color = "#202124",
-				fg_color = "#3b3052",
+				fg_color = "#7BC6C7",
 				italic = false,
 			},
 			new_tab = {
@@ -123,7 +124,7 @@ return {
 			},
 			new_tab_hover = {
 				bg_color = "#202124",
-				fg_color = "#3b3052",
+				fg_color = "#7BC6C7",
 				italic = false,
 			},
 		},
