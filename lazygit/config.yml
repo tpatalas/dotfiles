@@ -61,11 +61,11 @@ customCommands:
     context: "files"
     description: "toggle file staged"
   - key: "<c-c>"
-    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --ancestry-path --merges --pretty=format:"%h - %s" | grep -E "\(#\d+\)" | pbcopy'
+    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --ancestry-path --merges --pretty=format:"%h - %s" | grep -E "\(#\d+\)" | sed "s/^[0-9a-f]* //" | pbcopy'
     description: "Copy all merged commits messages with ticket number"
     context: "localBranches"
   - key: "<c-x>"
-    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --ancestry-path --merges --pretty=format:"%h - %s" | pbcopy'
+    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --ancestry-path --merges --pretty=format:"%h - %s" | sed "s/^[0-9a-f]* //" | pbcopy'
     description: "Copy all merged commits messages"
     context: "localBranches"
   - key: "C"
