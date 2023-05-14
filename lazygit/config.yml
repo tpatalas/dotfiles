@@ -33,6 +33,10 @@ customCommands:
     context: "files"
     description: "Open git diff with prompt"
     showOutput: true
+  - key: "<c-d>"
+    command: "git fetch && git checkout develop"
+    context: "localBranches"
+    description: "Fetch and checkout develop branch"
   - key: "L"
     command: "git log --graph --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline --color {{.SelectedLocalBranch.Name}}"
     context: "localBranches"
