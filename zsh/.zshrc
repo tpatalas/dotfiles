@@ -132,23 +132,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh
-if [ -r ~/.zshrc ]; then echo 'export GPG_TTY=$(tty)' >> ~/.zshrc; \
-  else echo 'export GPG_TTY=$(tty)' >> ~/.zprofile; fi
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
-export GPG_TTY=$(tty)
+# if [ -r ~/.zshrc ]; then echo 'export GPG_TTY=$(tty)' >> ~/.zshrc; \
+#   else echo 'export GPG_TTY=$(tty)' >> ~/.zprofile; fi
 export GPG_TTY=$(tty)
