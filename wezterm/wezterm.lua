@@ -69,7 +69,7 @@ return {
 	},
 	audible_bell = "Disabled",
 	window_frame = {
-		border_left_width = "0cell",
+		border_left_width = "0.3cell",
 		border_right_width = "0cell",
 		border_bottom_height = "0cell",
 		border_top_height = "0cell",
