@@ -46,9 +46,9 @@ return {
 	}),
 	font_shaper = "Harfbuzz",
 	bold_brightens_ansi_colors = "BrightOnly",
-	font_size = 18.5,
+	font_size = 17.0,
 	-- cell_width = 1.00,
-	line_height = 1.09,
+	line_height = 1.10,
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
@@ -62,14 +62,14 @@ return {
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "INTEGRATED_BUTTONS",
 	window_padding = {
-		left = 5,
+		left = 0,
 		right = 0,
 		top = 0,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
 	window_frame = {
-		border_left_width = "0cell",
+		border_left_width = "0.3cell",
 		border_right_width = "0cell",
 		border_bottom_height = "0cell",
 		border_top_height = "0cell",

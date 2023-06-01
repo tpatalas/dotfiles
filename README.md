@@ -11,7 +11,7 @@
 
 ![image](https://github.com/tpAtalas/dotfiles/blob/f6db3182954f1494b467ac9b4ed3d1065ee3adaf/image.wezterm.png?raw=true)
 
-#### Features
+### Features
 
 - Custom `tab_bar` that shows the current working directory (cwd)
 - Clean and minimal style with the background opacity
@@ -22,8 +22,12 @@
 
 ![image](https://github.com/tpAtalas/dotfiles/blob/f8b2bd5f521f74cfc371cc23abd543e38ee21039/image.lazygit.png?raw=true)
 
-#### Features
+### Features
 
 - Custom key with the remote `submodule update`
 - Custom key with `git fetch prune` for cleaning outdated branches
 - Plus other custom commands
+
+## License
+
+This project is licensed under the terms of the MIT License. See the [LICENSE](https://github.com/tpatalas/dotfiles/blob/master/LICENSE) file for details.

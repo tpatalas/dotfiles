@@ -1,6 +1,7 @@
 [user]
-	email = 64714719+tpAtalas@users.noreply.github.com
-	name = tpAtalas
+	email = tp@atalas.dev
+	name = tpatalas
+	signingkey = D87CD3096ED539B4
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -11,7 +12,10 @@
 	fileMode = false
 [commit]
 	template = ~/.gitcommit.txt
+	gpgsign = true
 [credential]
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[gpg]
+	program = gpg
