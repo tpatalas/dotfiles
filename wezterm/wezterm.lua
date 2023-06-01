@@ -16,7 +16,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local proc = basename(tab.active_pane.foreground_process_name)
 	local cwd = convert_homedir(tab.active_pane.current_working_dir:gsub("^file://", ""))
 	cwd = basename(cwd)
-	local title = " [" .. tab.tab_index + 1 .. "]" .. cwd .. ":" .. proc .. " "
+	local title = " [" .. tab.tab_index + 1 .. "] " .. cwd .. ":" .. proc .. " "
 	return {
 		{ Text = wezterm.truncate_right(title, max_width) },
 	}
@@ -39,37 +39,45 @@ return {
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
-		"JetBrainsMonoNL Nerd Font",
+		{ family = "JetBrainsMono Nerd Font", weight = "Regular" },
 		{ family = "Iosevka Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" } },
 		"FiraCode Nerd Font",
 		"Symbols Nerd Font",
 	}),
 	font_shaper = "Harfbuzz",
 	bold_brightens_ansi_colors = "BrightOnly",
-	font_size = 17.0,
-	-- cell_width = 1.00,
-	line_height = 1.10,
+	font_size = 15,
+	-- cell_width = 0.95,
+	line_height = 1.3,
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	allow_square_glyphs_to_overflow_width = "Never",
 	window_background_opacity = 0.5,
 	macos_window_background_blur = 15,
-	underline_position = -4,
+	underline_position = -5,
 	underline_thickness = 1,
-	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "INTEGRATED_BUTTONS",
 	window_padding = {
 		left = 0,
 		right = 0,
-		top = 0,
+		top = 5,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
+	visual_bell = {
+		fade_in_function = "EaseIn",
+		fade_in_duration_ms = 100,
+		fade_out_function = "EaseOut",
+		fade_out_duration_ms = 100,
+	},
 	window_frame = {
-		border_left_width = "0.3cell",
+		font = wezterm.font({ family = "Roboto", weight = "Medium" }),
+		font_size = 15,
+		active_titlebar_bg = "#202123",
+		inactive_titlebar_bg = "#202123",
+		border_left_width = "0cell",
 		border_right_width = "0cell",
 		border_bottom_height = "0cell",
 		border_top_height = "0cell",
@@ -83,7 +91,7 @@ return {
 	-- dpi = 144,
 	-- Tab_bar
 	enable_tab_bar = true,
-	use_fancy_tab_bar = false,
+	use_fancy_tab_bar = true,
 	tab_max_width = 50,
 	tab_bar_at_bottom = false,
 	-- colors
@@ -106,7 +114,7 @@ return {
 				strikethrough = false,
 			},
 			inactive_tab = {
-				bg_color = "#202124",
+				bg_color = "#202123",
 				fg_color = "#758299",
 				intensity = "Normal",
 				underline = "None",
@@ -123,7 +131,7 @@ return {
 				fg_color = "#808080",
 			},
 			new_tab_hover = {
-				bg_color = "#202124",
+				bg_color = "#35363A",
 				fg_color = "#7BC6C7",
 				italic = false,
 			},
