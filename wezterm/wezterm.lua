@@ -57,8 +57,8 @@ return {
 	allow_square_glyphs_to_overflow_width = "Never",
 	window_background_opacity = 0.5,
 	macos_window_background_blur = 15,
-	underline_position = -3.5,
-	underline_thickness = 2,
+	underline_position = -4,
+	underline_thickness = 1,
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "INTEGRATED_BUTTONS",
 	window_padding = {
