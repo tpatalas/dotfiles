@@ -80,7 +80,7 @@ customCommands:
     command: "git submodule update --remote"
     context: "submodules"
     description: "update remote submodule"
-  - key: "<c-f>"
+  - key: "F"
     command: "git fetch --prune origin"
     context: "localBranches"
     loadingText: "Pruning..."
