@@ -39,14 +39,15 @@ return {
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
-		{ family = "JetBrainsMonoNL Nerd Font", weight = "Regular", stretch = "Expanded" },
+		{ family = "JetBrainsMonoNL Nerd Font", weight = "Regular", stretch = "ExtraExpanded" },
 		{ family = "Iosevka Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" }, weight = "DemiBold" },
 		{ family = "FiraCode Nerd Font", weight = "Regular" },
 		"Symbols Nerd Font",
 	}),
 	font_shaper = "Harfbuzz",
+	front_end = "WebGpu",
 	bold_brightens_ansi_colors = "BrightOnly",
-	font_size = 15,
+	font_size = 14,
 	cell_width = 1.0,
 	line_height = 1.3,
 	foreground_text_hsb = {
@@ -56,19 +57,19 @@ return {
 	},
 	window_background_opacity = 0.5,
 	macos_window_background_blur = 50,
-	underline_position = -5,
+	underline_position = -6,
 	underline_thickness = 1,
 	window_decorations = "INTEGRATED_BUTTONS",
 	window_padding = {
-		left = 0,
+		left = 1,
 		right = 0,
-		top = 5,
+		top = 3,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
 	window_frame = {
-		font = wezterm.font({ family = "Roboto", weight = "Medium" }),
-		font_size = 14,
+		font = wezterm.font({ family = "Roboto", weight = "Bold" }),
+		font_size = 13,
 		active_titlebar_bg = "#202123",
 		inactive_titlebar_bg = "#202123",
 		border_left_width = "0cell",
