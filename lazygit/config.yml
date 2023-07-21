@@ -15,6 +15,7 @@ gui:
   authorColors:
     "*": "#636da6"
   showIcons: true
+  showBranchCommitHash: true
   theme:
     selectedLineBgColor:
       - "#51566F" # set to `default` to have no background color
