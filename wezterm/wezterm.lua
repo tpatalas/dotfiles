@@ -39,7 +39,7 @@ return {
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
-		{ family = "JetBrainsMonoNL Nerd Font", weight = "Regular", stretch = "ExtraExpanded" },
+		{ family = "JetBrainsMonoNL Nerd Font", weight = "Medium", stretch = "ExtraExpanded" },
 		{ family = "Iosevka Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" }, weight = "DemiBold" },
 		{ family = "FiraCode Nerd Font", weight = "Regular" },
 		"Symbols Nerd Font",
