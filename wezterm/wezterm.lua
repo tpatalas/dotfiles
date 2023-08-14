@@ -41,8 +41,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{
 			family = "JetBrainsMonoNL Nerd Font",
-			weight = "Medium",
-			stretch = "Expanded",
+			weight = "DemiBold",
 			italic = false,
 		},
 		{
@@ -68,7 +67,7 @@ return {
 	cell_width = 1.0,
 	line_height = 1.3,
 	-- freetype_load_target = "Normal",
-	-- freetype_load_flags = "NO_HINTING",
+	freetype_load_flags = "NO_HINTING",
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
@@ -82,7 +81,7 @@ return {
 	window_padding = {
 		left = 0,
 		right = 0,
-		top = 3,
+		top = 2,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
