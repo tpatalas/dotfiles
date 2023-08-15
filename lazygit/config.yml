@@ -17,6 +17,9 @@ gui:
   showIcons: true
   showBranchCommitHash: true
   theme:
+    activeBorderColor:
+      - cyan
+      - bold
     selectedLineBgColor:
       - "#51566F" # set to `default` to have no background color
 git:
