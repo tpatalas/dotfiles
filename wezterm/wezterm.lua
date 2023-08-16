@@ -39,9 +39,25 @@ return {
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
-		{ family = "JetBrainsMonoNL Nerd Font", weight = "Medium", stretch = "ExtraExpanded" },
-		{ family = "Iosevka Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" }, weight = "DemiBold" },
-		{ family = "FiraCode Nerd Font", weight = "Regular" },
+		{
+			family = "JetBrainsMonoNL Nerd Font",
+			weight = "DemiBold",
+			italic = false,
+		},
+		{
+			family = "FiraCode Nerd Font",
+			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+			weight = "Regular",
+			stretch = "Expanded",
+			italic = false,
+		},
+		{
+			family = "Iosevka Nerd Font",
+			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+			weight = "DemiBold",
+			stretch = "Expanded",
+			italic = false,
+		},
 		"Symbols Nerd Font",
 	}),
 	font_shaper = "Harfbuzz",
@@ -50,6 +66,8 @@ return {
 	font_size = 14,
 	cell_width = 1.0,
 	line_height = 1.3,
+	-- freetype_load_target = "Normal",
+	freetype_load_flags = "NO_HINTING",
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
@@ -57,13 +75,13 @@ return {
 	},
 	window_background_opacity = 0.5,
 	macos_window_background_blur = 50,
-	underline_position = -6,
+	underline_position = -5,
 	underline_thickness = 1,
 	window_decorations = "INTEGRATED_BUTTONS",
 	window_padding = {
-		left = 1,
+		left = 0,
 		right = 0,
-		top = 3,
+		top = 2,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
@@ -83,7 +101,6 @@ return {
 	},
 	window_close_confirmation = "NeverPrompt",
 	use_resize_increments = false,
-	-- dpi = 144,
 	-- Tab_bar
 	enable_tab_bar = true,
 	use_fancy_tab_bar = true,
