@@ -41,7 +41,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{
 			family = "JetBrainsMonoNL Nerd Font",
-			weight = "DemiBold",
+			weight = "Regular",
 			italic = false,
 		},
 		{
@@ -79,9 +79,9 @@ return {
 	underline_thickness = 1,
 	window_decorations = "INTEGRATED_BUTTONS",
 	window_padding = {
-		left = 0,
+		left = 1,
 		right = 0,
-		top = 2,
+		top = 1,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
