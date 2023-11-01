@@ -137,3 +137,4 @@ export NVM_DIR="$HOME/.nvm"
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
+export TERM=alacritty
