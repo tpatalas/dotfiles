@@ -104,7 +104,7 @@ return {
 	use_resize_increments = false,
 	-- Tab_bar
 	enable_tab_bar = false,
-	use_fancy_tab_bar = true,
+	use_fancy_tab_bar = false,
 	tab_max_width = 50,
 	tab_bar_at_bottom = false,
 	-- colors
@@ -186,8 +186,8 @@ return {
 			mods = "CMD|ALT",
 			action = wezterm.action.Search({ CaseInSensitiveString = "" }),
 		},
-		{ key = "LeftArrow", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
-		{ key = "RightArrow", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(1) },
+		{ key = "LeftArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
+		{ key = "RightArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(1) },
 		{ key = "LeftArrow", mods = "CMD|ALT", action = wezterm.action.ActivateTabRelative(-1) },
 		{ key = "RightArrow", mods = "CMD|ALT", action = wezterm.action.ActivateTabRelative(1) },
 		{
