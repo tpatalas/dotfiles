@@ -78,7 +78,7 @@ return {
 	macos_window_background_blur = 10,
 	underline_position = -3,
 	underline_thickness = 1,
-	window_decorations = "NONE", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
+	window_decorations = "RESIZE", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
 		left = 0,
 		right = 0,
