@@ -74,7 +74,7 @@ return {
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	window_background_opacity = 0.3,
+	window_background_opacity = 0.8,
 	macos_window_background_blur = 10,
 	underline_position = -3,
 	underline_thickness = 1,
