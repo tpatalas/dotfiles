@@ -1,4 +1,3 @@
--- https://wezfurlong.org/wezterm/
 -- https://wezfurlong.org/wezterm/config/lua/config/index.html
 
 local wezterm = require("wezterm")
@@ -33,6 +32,7 @@ for i = 1, 8 do
 end
 
 return {
+	-- color_scheme = "tokyonight",
 	-- Term
 	-- term = "xterm-256color",
 	term = "wezterm",
@@ -78,11 +78,11 @@ return {
 	macos_window_background_blur = 10,
 	underline_position = -3,
 	underline_thickness = 1,
-	window_decorations = "RESIZE", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
+	window_decorations = "INTEGRATED_BUTTONS", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
 		left = 0,
 		right = 0,
-		top = 10,
+		top = 5,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
@@ -103,8 +103,8 @@ return {
 	window_close_confirmation = "NeverPrompt",
 	use_resize_increments = false,
 	-- Tab_bar
-	enable_tab_bar = false,
-	use_fancy_tab_bar = false,
+	enable_tab_bar = true,
+	use_fancy_tab_bar = true,
 	tab_max_width = 50,
 	tab_bar_at_bottom = false,
 	-- colors
