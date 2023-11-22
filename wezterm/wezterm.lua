@@ -41,7 +41,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{
 			family = "JetBrainsMonoNL Nerd Font",
-			weight = "Bold",
+			weight = "Regular",
 			stretch = "Expanded",
 			italic = false,
 		},
@@ -64,7 +64,7 @@ return {
 	font_shaper = "Harfbuzz",
 	front_end = "WebGpu",
 	bold_brightens_ansi_colors = "BrightOnly",
-	font_size = 15,
+	font_size = 14,
 	cell_width = 1.0,
 	line_height = 1.0,
 	freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
@@ -80,9 +80,9 @@ return {
 	underline_thickness = 1,
 	window_decorations = "INTEGRATED_BUTTONS", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
-		left = 0,
+		left = 1,
 		right = 0,
-		top = 5,
+		top = 0,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
