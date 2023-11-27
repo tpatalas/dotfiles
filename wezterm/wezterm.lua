@@ -1,4 +1,3 @@
--- https://wezfurlong.org/wezterm/
 -- https://wezfurlong.org/wezterm/config/lua/config/index.html
 
 local wezterm = require("wezterm")
@@ -33,6 +32,7 @@ for i = 1, 8 do
 end
 
 return {
+	-- color_scheme = "tokyonight",
 	-- Term
 	-- term = "xterm-256color",
 	term = "wezterm",
@@ -41,7 +41,8 @@ return {
 	font = wezterm.font_with_fallback({
 		{
 			family = "JetBrainsMonoNL Nerd Font",
-			weight = "DemiBold",
+			weight = "Regular",
+			stretch = "Expanded",
 			italic = false,
 		},
 		{
@@ -65,35 +66,35 @@ return {
 	bold_brightens_ansi_colors = "BrightOnly",
 	font_size = 14,
 	cell_width = 1.0,
-	line_height = 1.3,
-	-- freetype_load_target = "Normal",
-	freetype_load_flags = "NO_HINTING",
+	line_height = 1.0,
+	freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
+	freetype_load_flags = "DEFAULT", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	window_background_opacity = 0.5,
-	macos_window_background_blur = 50,
-	underline_position = -5,
+	window_background_opacity = 0.8,
+	macos_window_background_blur = 10,
+	underline_position = -3,
 	underline_thickness = 1,
-	window_decorations = "INTEGRATED_BUTTONS",
+	window_decorations = "INTEGRATED_BUTTONS", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
-		left = 0,
+		left = 1,
 		right = 0,
-		top = 2,
+		top = 0,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
 	window_frame = {
 		font = wezterm.font({ family = "Roboto", weight = "Bold" }),
-		font_size = 13,
+		font_size = 12,
 		active_titlebar_bg = "#202123",
 		inactive_titlebar_bg = "#202123",
-		border_left_width = "0cell",
-		border_right_width = "0cell",
-		border_bottom_height = "0cell",
-		border_top_height = "0cell",
+		border_left_width = "0.0cell",
+		border_right_width = "0.0cell",
+		border_bottom_height = "0.0cell",
+		border_top_height = "0.0cell",
 		border_left_color = "None",
 		border_right_color = "None",
 		border_bottom_color = "None",
@@ -108,15 +109,21 @@ return {
 	tab_bar_at_bottom = false,
 	-- colors
 	colors = {
-		foreground = "#c8d3f5",
-		background = "#222436",
-		cursor_bg = "#c8d3f5",
-		cursor_border = "#c8d3f5",
-		cursor_fg = "#222436",
-		selection_bg = "#3654a7",
-		selection_fg = "#c8d3f5",
+		-- https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm.lua
+		foreground = "#dcd7ba",
+		background = "#1f1f28",
+		cursor_bg = "#c8c093",
+		cursor_fg = "#c8c093",
+		cursor_border = "#c8c093",
+		selection_fg = "#c8c093",
+		selection_bg = "#2d4f67",
+		scrollbar_thumb = "#16161d",
+		split = "#16161d",
+		ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
+		brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
+		indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
 		tab_bar = {
-			background = "#202124",
+			background = "#1f1f28",
 			active_tab = {
 				bg_color = "#35363A",
 				fg_color = "#7BC6C7",
@@ -179,8 +186,8 @@ return {
 			mods = "CMD|ALT",
 			action = wezterm.action.Search({ CaseInSensitiveString = "" }),
 		},
-		{ key = "LeftArrow", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
-		{ key = "RightArrow", mods = "CMD|SHIFT", action = wezterm.action.MoveTabRelative(1) },
+		{ key = "LeftArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
+		{ key = "RightArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(1) },
 		{ key = "LeftArrow", mods = "CMD|ALT", action = wezterm.action.ActivateTabRelative(-1) },
 		{ key = "RightArrow", mods = "CMD|ALT", action = wezterm.action.ActivateTabRelative(1) },
 		{
