@@ -12,13 +12,21 @@ local function basename(s)
 end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local proc = basename(tab.active_pane.foreground_process_name)
-	local cwd = convert_homedir(tab.active_pane.current_working_dir:gsub("^file://", ""))
-	cwd = basename(cwd)
-	local title = " [" .. tab.tab_index + 1 .. "] " .. cwd .. ":" .. proc .. " "
-	return {
-		{ Text = wezterm.truncate_right(title, max_width) },
-	}
+	local activeTitle = tab.active_pane.title
+
+	if activeTitle:find("^") then
+		return {
+			{ Text = wezterm.truncate_right(activeTitle, max_width) },
+		}
+	else
+		local proc = basename(tab.active_pane.foreground_process_name)
+		local cwd = convert_homedir(tab.active_pane.current_working_dir:gsub("^file://", ""))
+		cwd = basename(cwd)
+		local title = " [" .. tab.tab_index + 1 .. "] " .. cwd .. ":" .. proc
+		return {
+			{ Text = wezterm.truncate_right(title, max_width) },
+		}
+	end
 end)
 
 local mykeys = {}
@@ -42,7 +50,7 @@ return {
 		{
 			family = "JetBrainsMonoNL Nerd Font",
 			weight = "Regular",
-			stretch = "Expanded",
+			-- stretch = "Expanded",
 			italic = false,
 		},
 		{
@@ -59,7 +67,9 @@ return {
 			stretch = "Expanded",
 			italic = false,
 		},
-		"Symbols Nerd Font",
+		{
+			family = "Symbols Nerd Font Mono",
+		},
 	}),
 	font_shaper = "Harfbuzz",
 	front_end = "WebGpu",
