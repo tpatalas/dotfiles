@@ -23,3 +23,5 @@
 [diff "lockb"]
 	textconv = bun
 	binary = true
+[init]
+	defaultBranch = master
