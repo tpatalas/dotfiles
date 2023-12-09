@@ -120,8 +120,8 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-if [ -f ~/.dotfiles/.local/.aliases ]; then
-  source ~/.dotfiles/.local/.aliases
+if [ -f ~/.local/.aliases ]; then
+  source ~/.local/.aliases
 fi
 
 
