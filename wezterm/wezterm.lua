@@ -41,7 +41,8 @@ end
 
 return {
 	-- color_scheme = "tokyonight",
-	color_scheme = "catppuccin-mocha",
+	-- color_scheme = "catppuccin-mocha",
+	color_scheme = "MaterialOcean",
 	-- Term
 	-- term = "xterm-256color",
 	term = "wezterm",
