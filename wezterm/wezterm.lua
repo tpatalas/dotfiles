@@ -51,7 +51,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{
 			family = "JetBrainsMonoNL Nerd Font",
-			weight = "Regular",
+			weight = "DemiBold",
 			-- stretch = "Expanded",
 			italic = false,
 		},
@@ -80,14 +80,14 @@ return {
 	cell_width = 1.0,
 	line_height = 1.0,
 	freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
-	freetype_load_flags = "DEFAULT", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
+	freetype_load_flags = "NO_HINTING", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	window_background_opacity = 0.8,
-	macos_window_background_blur = 10,
+	window_background_opacity = 0.7,
+	macos_window_background_blur = 30,
 	underline_position = -3,
 	underline_thickness = 1,
 	window_decorations = "INTEGRATED_BUTTONS", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
