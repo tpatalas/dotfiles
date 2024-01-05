@@ -15,8 +15,8 @@ gui:
     "to-do": "#646DA4"
   authorColors:
     "*": "#636da6"
-  showIcons: true
   showBranchCommitHash: true
+  nerdFontsVersion: '3'
   theme:
     activeBorderColor:
       - cyan
