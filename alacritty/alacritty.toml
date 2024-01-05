@@ -17,7 +17,7 @@ resize_increments = true
 opacity = 0.6
 blur = true
 # title = ""
-padding = { x = 2, y = 0 }
+padding = { x = 0, y = 0 }
 dynamic_padding = true
 
 [font]
@@ -42,4 +42,3 @@ style = { shape = 'Beam', blinking = "Always" }
 
 [mouse]
 hide_when_typing = true
-
