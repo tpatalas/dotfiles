@@ -14,7 +14,7 @@ decorations = "None"               # "Full" | "None" | "Transparent" | "Buttonle
 decorations_theme_variant = "None"
 dynamic_title = true
 resize_increments = true
-opacity = 0.6
+opacity = 0.7
 blur = true
 # title = ""
 padding = { x = 0, y = 0 }
