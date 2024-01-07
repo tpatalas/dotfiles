@@ -1,32 +1,24 @@
 -- https://wezfurlong.org/wezterm/config/lua/config/index.html
 
 local wezterm = require("wezterm")
+local act = wezterm.action
 
-local function convert_homedir(path)
-	local cwd = path
-	return cwd:gsub("^" .. wezterm.home_dir, "~")
-end
+wezterm.on("augment-command-palette", function(window, pane)
+	return {
+		{
+			brief = "Rename tab",
+			icon = "md_rename_box",
 
-local function basename(s)
-	return string.gsub(s, "/$", ""):gsub("(.*[/\\])(.*)", "%2")
-end
-
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local activeTitle = tab.active_pane.title
-
-	if activeTitle:find("^") then
-		return {
-			{ Text = wezterm.truncate_right(activeTitle, max_width) },
-		}
-	else
-		local proc = basename(tab.active_pane.foreground_process_name)
-		local cwd = convert_homedir(tab.active_pane.current_working_dir:gsub("^file://", ""))
-		cwd = basename(cwd)
-		local title = " [" .. tab.tab_index + 1 .. "] " .. cwd .. ":" .. proc
-		return {
-			{ Text = wezterm.truncate_right(title, max_width) },
-		}
-	end
+			action = act.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, pane, line)
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
+	}
 end)
 
 local mykeys = {}
@@ -50,7 +42,7 @@ return {
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
 		{
-			family = "JetBrainsMonoNL Nerd Font",
+			family = "JetBrainsMono Nerd Font",
 			weight = "DemiBold",
 			-- stretch = "Expanded",
 			italic = false,
@@ -80,19 +72,19 @@ return {
 	cell_width = 1.0,
 	line_height = 1.0,
 	freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
-	freetype_load_flags = "NO_HINTING", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
+	-- freetype_load_flags = "NO_HINTING", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	window_background_opacity = 0.7,
+	window_background_opacity = 0.75,
 	macos_window_background_blur = 30,
 	underline_position = -3,
 	underline_thickness = 1,
 	window_decorations = "INTEGRATED_BUTTONS", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
-		left = 1,
+		left = 0,
 		right = 0,
 		top = 0,
 		bottom = 0,
@@ -100,7 +92,7 @@ return {
 	audible_bell = "Disabled",
 	window_frame = {
 		font = wezterm.font({ family = "Roboto", weight = "Bold" }),
-		font_size = 12,
+		font_size = 13,
 		active_titlebar_bg = "#202123",
 		inactive_titlebar_bg = "#202123",
 		border_left_width = "0.0cell",
@@ -121,25 +113,12 @@ return {
 	tab_bar_at_bottom = false,
 	-- colors
 	colors = {
-		-- https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm.lua
-		-- foreground = "#dcd7ba",
-		-- background = "#1f1f28",
-		-- cursor_bg = "#c8c093",
-		-- cursor_fg = "#c8c093",
-		-- cursor_border = "#c8c093",
-		-- selection_fg = "#c8c093",
-		-- selection_bg = "#2d4f67",
-		-- scrollbar_thumb = "#16161d",
-		-- split = "#16161d",
-		-- ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
-		-- brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
-		-- indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
 		tab_bar = {
 			background = "#1f1f28",
 			active_tab = {
 				bg_color = "#35363A",
-				fg_color = "#7BC6C7",
-				intensity = "Bold",
+				fg_color = "#e8eaed",
+				intensity = "Normal",
 				underline = "None",
 				italic = false,
 				strikethrough = false,
@@ -154,7 +133,7 @@ return {
 			},
 			inactive_tab_hover = {
 				bg_color = "#202124",
-				fg_color = "#7BC6C7",
+				fg_color = "#e8eaed",
 				italic = false,
 			},
 			new_tab = {
@@ -163,7 +142,7 @@ return {
 			},
 			new_tab_hover = {
 				bg_color = "#35363A",
-				fg_color = "#7BC6C7",
+				fg_color = "#e8eaed",
 				italic = false,
 			},
 		},
@@ -183,87 +162,35 @@ return {
 	check_for_updates_interval_seconds = 86400,
 	-- keys
 	keys = {
+		-- tabs
+		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+		{ key = "[", mods = "CMD|ALT", action = wezterm.action.MoveTabRelative(-1) },
+		{ key = "]", mods = "CMD|ALT", action = wezterm.action.MoveTabRelative(1) },
+		{ key = "[", mods = "CMD", action = wezterm.action.ActivateTabRelative(-1) },
+		{ key = "]", mods = "CMD", action = wezterm.action.ActivateTabRelative(1) },
+		--- rename tab
 		{
-			key = "w",
+			key = "r",
 			mods = "CMD",
-			action = wezterm.action.CloseCurrentTab({ confirm = false }),
+			action = wezterm.action_callback(function(window, pane)
+				window:perform_action(
+					act.PromptInputLine({
+						description = "Enter new name for tab",
+						action = wezterm.action_callback(function(window, pane, line)
+							if line then
+								window:active_tab():set_title(line)
+							end
+						end),
+					}),
+					pane
+				)
+			end),
 		},
-		{
-			key = "w",
-			mods = "CMD",
-			action = wezterm.action.CloseCurrentPane({ confirm = false }),
-		},
-		{
-			key = "/",
-			mods = "CMD|ALT",
-			action = wezterm.action.Search({ CaseInSensitiveString = "" }),
-		},
-		{ key = "LeftArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
-		{ key = "RightArrow", mods = "ALT|SHIFT", action = wezterm.action.MoveTabRelative(1) },
-		{ key = "LeftArrow", mods = "CMD|ALT", action = wezterm.action.ActivateTabRelative(-1) },
-		{ key = "RightArrow", mods = "CMD|ALT", action = wezterm.action.ActivateTabRelative(1) },
-		{
-			key = "|",
-			mods = "CMD|ALT|SHIFT",
-			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-		},
-		{
-			key = "_",
-			mods = "CMD|ALT|SHIFT",
-			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-		},
-		{
-			key = "UpArrow",
-			mods = "CMD|ALT|SHIFT",
-			action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
-		},
-		{
-			key = "DownArrow",
-			mods = "CMD|ALT|SHIFT",
-			action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
-		},
-		{
-			key = "RightArrow",
-			mods = "CMD|ALT|SHIFT",
-			action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
-		},
-		{
-			key = "LeftArrow",
-			mods = "CMD|ALT|SHIFT",
-			action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
-		},
-		{
-			key = "~",
-			mods = "CMD|ALT|SHIFT",
-			action = wezterm.action.PaneSelect({
-				alphabet = "1234567890",
-			}),
-		},
-		{
-			key = "UpArrow",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action.ActivatePaneDirection("Left"),
-		},
-		{
-			key = "DownArrow",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action.ActivatePaneDirection("Right"),
-		},
-		{
-			key = "UpArrow",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action.ActivatePaneDirection("Up"),
-		},
-		{
-			key = "DownArrow",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action.ActivatePaneDirection("Down"),
-		},
-		{
-			key = "`",
-			mods = "CTRL|CMD",
-			action = wezterm.action.ActivatePaneDirection("Next"),
-		},
+
+		-- Command Palette
+		{ key = "p", mods = "CMD", action = wezterm.action.ActivateCommandPalette },
+		-- disable defaults
 		{ key = "F1", action = wezterm.action.DisableDefaultAssignment },
 		{ key = "F2", action = wezterm.action.DisableDefaultAssignment },
 		{ key = "F3", action = wezterm.action.DisableDefaultAssignment },
