@@ -82,11 +82,11 @@ return {
 	macos_window_background_blur = 30,
 	underline_position = -3,
 	underline_thickness = 1,
-	window_decorations = "INTEGRATED_BUTTONS", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
+	window_decorations = "RESIZE", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
 		left = 0,
 		right = 0,
-		top = 0,
+		top = 10,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
@@ -107,7 +107,7 @@ return {
 	window_close_confirmation = "NeverPrompt",
 	use_resize_increments = false,
 	-- Tab_bar
-	enable_tab_bar = true,
+	enable_tab_bar = false,
 	use_fancy_tab_bar = true,
 	tab_max_width = 50,
 	tab_bar_at_bottom = false,
@@ -156,7 +156,7 @@ return {
 	-- Unicode
 	unicode_version = 14,
 	-- animation
-	animation_fps = 60,
+	-- animation_fps = 60,
 	-- Update
 	check_for_updates = true,
 	check_for_updates_interval_seconds = 86400,
@@ -169,6 +169,8 @@ return {
 		{ key = "]", mods = "CMD|ALT", action = wezterm.action.MoveTabRelative(1) },
 		{ key = "[", mods = "CMD", action = wezterm.action.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CMD", action = wezterm.action.ActivateTabRelative(1) },
+		{ key = "n", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
+
 		--- rename tab
 		{
 			key = "r",
@@ -188,8 +190,11 @@ return {
 			end),
 		},
 
-		-- Command Palette
+		-- command Palette
 		{ key = "p", mods = "CMD", action = wezterm.action.ActivateCommandPalette },
+		-- copy Mode
+		-- more info: https://wezfurlong.org/wezterm/config/lua/keyassignment/CopyMode/index.html
+		{ key = "c", mods = "CMD|SHIFT", action = wezterm.action.ActivateCopyMode },
 		-- disable defaults
 		{ key = "F1", action = wezterm.action.DisableDefaultAssignment },
 		{ key = "F2", action = wezterm.action.DisableDefaultAssignment },
