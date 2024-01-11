@@ -42,7 +42,7 @@ return {
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
 	font = wezterm.font_with_fallback({
 		{
-			family = "JetBrainsMono Nerd Font",
+			family = "JetBrainsMonoNL Nerd Font",
 			weight = "DemiBold",
 			-- stretch = "Expanded",
 			italic = false,
