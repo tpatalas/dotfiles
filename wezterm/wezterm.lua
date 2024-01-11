@@ -3,6 +3,31 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
+local function prepare_command(pane, command)
+	local cwd_uri = pane:get_current_working_dir()
+	local cwd = nil
+
+	if cwd_uri then
+		if type(cwd_uri) == "userdata" then
+			cwd = cwd_uri.file_path
+		else
+			cwd_uri = cwd_uri:sub(8)
+			local slash = cwd_uri:find("/")
+			if slash then
+				cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
+					return string.char(tonumber(hex, 16))
+				end)
+			end
+		end
+	end
+
+	if not cwd or cwd == "" then
+		cwd = "~"
+	end
+
+	return "cd '" .. cwd .. "' && " .. command
+end
+
 wezterm.on("augment-command-palette", function(window, pane)
 	return {
 		{
@@ -43,7 +68,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{
 			family = "JetBrainsMonoNL Nerd Font",
-			weight = "DemiBold",
+			weight = "Regular",
 			-- stretch = "Expanded",
 			italic = false,
 		},
@@ -67,18 +92,19 @@ return {
 	}),
 	font_shaper = "Harfbuzz",
 	front_end = "WebGpu",
-	bold_brightens_ansi_colors = "BrightOnly",
+	webgpu_power_preference = "HighPerformance",
+	bold_brightens_ansi_colors = true,
 	font_size = 14,
 	cell_width = 1.0,
 	line_height = 1.0,
-	freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
+	-- freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
 	-- freetype_load_flags = "NO_HINTING", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	window_background_opacity = 0.75,
+	window_background_opacity = 0.80,
 	macos_window_background_blur = 30,
 	underline_position = -3,
 	underline_thickness = 1,
@@ -161,6 +187,7 @@ return {
 	check_for_updates = true,
 	check_for_updates_interval_seconds = 86400,
 	-- keys
+
 	keys = {
 		-- tabs
 		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
@@ -195,6 +222,9 @@ return {
 		-- copy Mode
 		-- more info: https://wezfurlong.org/wezterm/config/lua/keyassignment/CopyMode/index.html
 		{ key = "c", mods = "CMD|SHIFT", action = wezterm.action.ActivateCopyMode },
+		-- swpan window
+		{ key = "N", mods = "CMD", action = wezterm.action.SpawnWindow },
+
 		-- disable defaults
 		{ key = "F1", action = wezterm.action.DisableDefaultAssignment },
 		{ key = "F2", action = wezterm.action.DisableDefaultAssignment },
@@ -208,5 +238,32 @@ return {
 		{ key = "F10", action = wezterm.action.DisableDefaultAssignment },
 		{ key = "F11", action = wezterm.action.DisableDefaultAssignment },
 		{ key = "F12", action = wezterm.action.DisableDefaultAssignment },
+		-- open lazygit with current wd in a new tab
+		{
+			key = "l",
+			mods = "CMD",
+			action = wezterm.action_callback(function(window, pane)
+				local command = prepare_command(pane, "lazygit")
+				window:perform_action(
+					act.SpawnCommandInNewTab({
+						args = { "sh", "-lc", command },
+					}),
+					pane
+				)
+			end),
+		},
+		{
+			key = "n",
+			mods = "CMD",
+			action = wezterm.action_callback(function(window, pane)
+				local command = prepare_command(pane, "nvim")
+				window:perform_action(
+					act.SpawnCommandInNewTab({
+						args = { "sh", "-lc", command },
+					}),
+					pane
+				)
+			end),
+		},
 	},
 }
