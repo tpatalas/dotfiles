@@ -53,7 +53,6 @@ return {
 	-- color_scheme = "catppuccin-mocha",
 	color_scheme = "MaterialOcean",
 	-- Term
-	-- term = "xterm-256color",
 	term = "wezterm",
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
@@ -63,23 +62,6 @@ return {
 			weight = "Regular",
 			-- stretch = "Expanded",
 			italic = false,
-		},
-		{
-			family = "FiraCode Nerd Font",
-			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-			weight = "Regular",
-			stretch = "Expanded",
-			italic = false,
-		},
-		{
-			family = "Iosevka Nerd Font",
-			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-			weight = "DemiBold",
-			stretch = "Expanded",
-			italic = false,
-		},
-		{
-			family = "Symbols Nerd Font Mono",
 		},
 	}),
 	font_shaper = "Harfbuzz",
