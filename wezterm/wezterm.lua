@@ -196,7 +196,7 @@ return {
 		{ key = "]", mods = "CMD|ALT", action = wezterm.action.MoveTabRelative(1) },
 		{ key = "[", mods = "CMD", action = wezterm.action.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CMD", action = wezterm.action.ActivateTabRelative(1) },
-		{ key = "`", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
+		{ key = "-", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
 
 		--- rename tab
 		{
