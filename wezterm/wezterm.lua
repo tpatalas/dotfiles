@@ -156,7 +156,7 @@ return {
 	-- Unicode
 	unicode_version = 14,
 	-- animation
-	-- animation_fps = 60,
+	animation_fps = 5,
 	-- Update
 	check_for_updates = true,
 	check_for_updates_interval_seconds = 86400,
