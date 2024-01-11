@@ -8,21 +8,13 @@ local function prepare_command(pane, command)
 	local cwd = nil
 
 	if cwd_uri then
-		if type(cwd_uri) == "userdata" then
-			cwd = cwd_uri.file_path
-		else
-			cwd_uri = cwd_uri:sub(8)
-			local slash = cwd_uri:find("/")
-			if slash then
-				cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
-					return string.char(tonumber(hex, 16))
-				end)
-			end
+		cwd_uri = cwd_uri:sub(8)
+		local slash = cwd_uri:find("/")
+		if slash then
+			cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
+				return string.char(tonumber(hex, 16))
+			end)
 		end
-	end
-
-	if not cwd or cwd == "" then
-		cwd = "~"
 	end
 
 	return "cd '" .. cwd .. "' && " .. command
