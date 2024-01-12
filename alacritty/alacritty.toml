@@ -9,6 +9,7 @@ import = ["~/.config/alacritty/custom_themes/material-deep-ocean.toml"]
 [env]
 TERM = "alacritty"
 
+
 [window]
 decorations = "None"               # "Full" | "None" | "Transparent" | "Buttonless"
 decorations_theme_variant = "None"
@@ -19,6 +20,7 @@ blur = true
 # title = ""
 padding = { x = 0, y = 0 }
 dynamic_padding = true
+
 
 [font]
 size = 14.0
@@ -39,3 +41,13 @@ style = { shape = 'Beam', blinking = "Always" }
 
 [mouse]
 hide_when_typing = true
+
+
+[keyboard]
+# open lazygit with new window
+bindings = [
+  { key = "l", mods = "Command", command = { program = "sh", args = [
+    "-lc",
+    "ALACRITTY_CWD=$(pwd) alacritty -e zsh -c 'cd $ALACRITTY_CWD && lazygit'",
+  ] } },
+]
