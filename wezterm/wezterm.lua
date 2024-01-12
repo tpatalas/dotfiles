@@ -66,6 +66,7 @@ return {
 	}),
 	font_shaper = "Harfbuzz",
 	front_end = "WebGpu",
+	prefer_egl = true,
 	webgpu_power_preference = "HighPerformance",
 	bold_brightens_ansi_colors = true,
 	font_size = 14,
@@ -158,8 +159,8 @@ return {
 	-- animation
 	animation_fps = 5,
 	-- Update
-	check_for_updates = true,
-	check_for_updates_interval_seconds = 86400,
+	check_for_updates = false,
+	-- check_for_updates_interval_seconds = 86400,
 	-- keys
 
 	keys = {
@@ -170,7 +171,7 @@ return {
 		{ key = "]", mods = "CMD|ALT", action = wezterm.action.MoveTabRelative(1) },
 		{ key = "[", mods = "CMD", action = wezterm.action.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CMD", action = wezterm.action.ActivateTabRelative(1) },
-		{ key = "-", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
+		{ key = "t", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
 
 		--- rename tab
 		{
