@@ -42,9 +42,7 @@ style = { shape = 'Beam', blinking = "Always" }
 [mouse]
 hide_when_typing = true
 
-
 [keyboard]
-# open lazygit with new window
 bindings = [
   { key = "l", mods = "Command", command = { program = "sh", args = [
     "-lc",
