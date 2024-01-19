@@ -1,0 +1,51 @@
+# https://alacritty.org/config-alacritty.html
+# https://github.com/alacritty/alacritty-theme
+
+live_config_reload = true
+# import = ["~/.config/alacritty/themes/themes/rose-pine.toml"]
+import = ["~/.config/alacritty/custom_themes/material-deep-ocean.toml"]
+
+
+[env]
+TERM = "alacritty"
+
+
+[window]
+decorations = "None"               # "Full" | "None" | "Transparent" | "Buttonless"
+decorations_theme_variant = "None"
+dynamic_title = true
+resize_increments = true
+opacity = 0.80
+blur = true
+# title = ""
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+
+
+[font]
+size = 14.0
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+builtin_box_drawing = true
+glyph_offset = { x = 0, y = 0 }
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+thickness = 0.32
+unfocused_hollow = true
+style = { shape = 'Beam', blinking = "Always" }
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+  { key = "l", mods = "Command", command = { program = "sh", args = [
+    "-lc",
+    "ALACRITTY_CWD=$(pwd) alacritty -e zsh -c 'cd $ALACRITTY_CWD && lazygit'",
+  ] } },
+]
