@@ -8,21 +8,13 @@ local function prepare_command(pane, command)
 	local cwd = nil
 
 	if cwd_uri then
-		if type(cwd_uri) == "userdata" then
-			cwd = cwd_uri.file_path
-		else
-			cwd_uri = cwd_uri:sub(8)
-			local slash = cwd_uri:find("/")
-			if slash then
-				cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
-					return string.char(tonumber(hex, 16))
-				end)
-			end
+		cwd_uri = cwd_uri:sub(8)
+		local slash = cwd_uri:find("/")
+		if slash then
+			cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
+				return string.char(tonumber(hex, 16))
+			end)
 		end
-	end
-
-	if not cwd or cwd == "" then
-		cwd = "~"
 	end
 
 	return "cd '" .. cwd .. "' && " .. command
@@ -61,7 +53,6 @@ return {
 	-- color_scheme = "catppuccin-mocha",
 	color_scheme = "MaterialOcean",
 	-- Term
-	-- term = "xterm-256color",
 	term = "wezterm",
 	-- Font
 	-- More NerdFont: https://www.nerdfonts.com/font-downloads
@@ -72,26 +63,10 @@ return {
 			-- stretch = "Expanded",
 			italic = false,
 		},
-		{
-			family = "FiraCode Nerd Font",
-			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-			weight = "Regular",
-			stretch = "Expanded",
-			italic = false,
-		},
-		{
-			family = "Iosevka Nerd Font",
-			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-			weight = "DemiBold",
-			stretch = "Expanded",
-			italic = false,
-		},
-		{
-			family = "Symbols Nerd Font Mono",
-		},
 	}),
 	font_shaper = "Harfbuzz",
 	front_end = "WebGpu",
+	prefer_egl = true,
 	webgpu_power_preference = "HighPerformance",
 	bold_brightens_ansi_colors = true,
 	font_size = 14,
@@ -182,10 +157,10 @@ return {
 	-- Unicode
 	unicode_version = 14,
 	-- animation
-	-- animation_fps = 60,
+	animation_fps = 5,
 	-- Update
-	check_for_updates = true,
-	check_for_updates_interval_seconds = 86400,
+	check_for_updates = false,
+	-- check_for_updates_interval_seconds = 86400,
 	-- keys
 
 	keys = {
@@ -196,7 +171,7 @@ return {
 		{ key = "]", mods = "CMD|ALT", action = wezterm.action.MoveTabRelative(1) },
 		{ key = "[", mods = "CMD", action = wezterm.action.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CMD", action = wezterm.action.ActivateTabRelative(1) },
-		{ key = "`", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
+		{ key = "t", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
 
 		--- rename tab
 		{
