@@ -118,7 +118,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
+
 
 if [ -f ~/.dotfiles/.local/.aliases ]; then
   source ~/.dotfiles/.local/.aliases
