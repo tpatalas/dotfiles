@@ -4,20 +4,18 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local function prepare_command(pane, command)
-	local cwd_uri = pane:get_current_working_dir()
+	local cwd_url = pane:get_current_working_dir()
 	local cwd = nil
 
-	if cwd_uri then
-		cwd_uri = cwd_uri:sub(8)
-		local slash = cwd_uri:find("/")
-		if slash then
-			cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
-				return string.char(tonumber(hex, 16))
-			end)
-		end
+	if cwd_url and cwd_url.scheme == "file" then
+		cwd = cwd_url.file_path
 	end
 
-	return "cd '" .. cwd .. "' && " .. command
+	if cwd then
+		return "cd '" .. cwd .. "' && " .. command
+	else
+		return command
+	end
 end
 
 wezterm.on("augment-command-palette", function(window, pane)
