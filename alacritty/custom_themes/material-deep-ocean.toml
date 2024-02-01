@@ -3,7 +3,7 @@ background = '#0F111A'
 foreground = '#A6ACCD'
 
 [colors.cursor]
-text = '#e0def4'
+text = '#394b70'
 cursor = '#FFCB6B'
 
 [colors.vi_mode_cursor]
