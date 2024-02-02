@@ -1,0 +1,48 @@
+cursor = '▇'
+blinking-cursor = true
+hide-cursor-when-typing = true
+theme = "material-deepocean"
+padding-x = 2
+
+
+[window]
+width = 600
+height = 400
+mode = "Windowed"
+foreground-opacity = 1.0
+background-opacity = 0.8
+blur = true
+decorations = "Buttonless"
+
+[renderer]
+performance = "High"
+backend = "Automatic"
+disable-renderer-when-unfocused = true
+
+[fonts]
+family = "JetBrainsMonoNL Nerd Font"
+size = 19
+[fonts.regular]
+family = "JetBrainsMonoNL Nerd Font"
+style = "normal"
+weight = 400
+
+[fonts.bold]
+family = "JetBrainsMonoNL Nerd Font"
+style = "normal"
+weight = 800
+
+[fonts.italic]
+family = "JetBrainsMonoNL Nerd Font"
+style = "italic"
+weight = 400
+
+[fonts.bold-italic]
+family = "JetBrainsMonoNL Nerd Font"
+style = "italic"
+weight = 800
+
+[navigation]
+mode = "TopTab"
+clickable = true
+use-current-path = true
