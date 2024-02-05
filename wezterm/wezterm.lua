@@ -77,8 +77,8 @@ return {
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	window_background_opacity = 0.90,
-	macos_window_background_blur = 15,
+	window_background_opacity = 0.80,
+	macos_window_background_blur = 20,
 	underline_position = -3,
 	underline_thickness = 1,
 	window_decorations = "RESIZE", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
