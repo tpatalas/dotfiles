@@ -11,7 +11,9 @@ TERM = "alacritty"
 
 
 [window]
-decorations = "None"               # "Full" | "None" | "Transparent" | "Buttonless"
+dimensions = { columns = 163, lines = 58 }
+position = { x = 1268, y = 474 }
+decorations = "None"                       # "Full" | "None" | "Transparent" | "Buttonless"
 decorations_theme_variant = "None"
 dynamic_title = true
 resize_increments = true
