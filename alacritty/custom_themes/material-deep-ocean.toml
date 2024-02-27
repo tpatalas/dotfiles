@@ -3,7 +3,7 @@ background = '#0F111A'
 foreground = '#A6ACCD'
 
 [colors.cursor]
-text = '#e0def4'
+text = '#394b70'
 cursor = '#FFCB6B'
 
 [colors.vi_mode_cursor]
@@ -23,16 +23,6 @@ blue = "#82AAFF"
 magenta = '#C792EA'
 cyan = '#89DDFF'
 white = '#EEFFFF'
-
-# [colors.bright]
-# black = '#6e6a86'
-# red = '#eb6f92'
-# green = '#31748f'
-# yellow = '#f6c177'
-# blue = '#9ccfd8'
-# magenta = '#c4a7e7'
-# cyan = '#ebbcba'
-# white = '#e0def4'
 
 [colors.hints]
 start = { foreground = '#908caa', background = '#1f1d2e' }
