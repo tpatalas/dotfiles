@@ -67,9 +67,9 @@ return {
 	prefer_egl = true,
 	webgpu_power_preference = "HighPerformance",
 	bold_brightens_ansi_colors = true,
-	font_size = 14,
+	font_size = 13,
 	cell_width = 1.0,
-	line_height = 1.0,
+	line_height = 1.2,
 	freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
 	freetype_load_flags = "DEFAULT", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
 	foreground_text_hsb = {
@@ -78,14 +78,14 @@ return {
 		brightness = 1.0,
 	},
 	window_background_opacity = 0.80,
-	macos_window_background_blur = 20,
+	macos_window_background_blur = 10,
 	underline_position = -3,
 	underline_thickness = 1,
 	window_decorations = "RESIZE", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
 		left = 0,
 		right = 0,
-		top = 10,
+		top = 0,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
