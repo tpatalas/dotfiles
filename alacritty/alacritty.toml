@@ -17,7 +17,7 @@ decorations = "None"                       # "Full" | "None" | "Transparent" | "
 decorations_theme_variant = "None"
 dynamic_title = true
 resize_increments = true
-opacity = 0.50
+opacity = 0.70
 blur = true
 # title = ""
 padding = { x = 0, y = 0 }
