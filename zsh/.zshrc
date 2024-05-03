@@ -140,7 +140,7 @@ export NVM_DIR="$HOME/.nvm"
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
-export TERM=alacritty
+# export TERM=alacritty
 
 # Google Cloud SDK
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
