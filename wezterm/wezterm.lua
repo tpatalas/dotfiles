@@ -53,46 +53,38 @@ return {
 	-- Term
 	term = "wezterm",
 	-- Font
-	-- More NerdFont: https://www.nerdfonts.com/font-downloads
-	font = wezterm.font_with_fallback({
-		{
-			family = "JetBrainsMonoNL Nerd Font",
-			weight = "Regular",
-			-- stretch = "Expanded",
-			italic = false,
-		},
-	}),
+	font = wezterm.font("JetBrains Mono", { weight = "DemiBold", italic = false }),
 	font_shaper = "Harfbuzz",
 	front_end = "WebGpu",
 	prefer_egl = true,
 	webgpu_power_preference = "HighPerformance",
 	bold_brightens_ansi_colors = true,
-	font_size = 14,
+	font_size = 13,
 	cell_width = 1.0,
-	line_height = 1.0,
-	freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
-	freetype_load_flags = "DEFAULT", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
+	line_height = 1.1,
+	-- freetype_load_target = "Normal", -- Normal, Light, Mono, HorizontalLcd
+	freetype_load_flags = "NO_HINTING", -- DEFAULT, NO_HINTING, NO_BITMAP, FORCE_AUTOHINT, MONOCHROME, NO_AUTOHINT
 	foreground_text_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
 		brightness = 1.0,
 	},
-	window_background_opacity = 0.80,
-	macos_window_background_blur = 20,
-	underline_position = -3,
+	window_background_opacity = 0.70,
+	macos_window_background_blur = 30,
+	underline_position = -2,
 	underline_thickness = 1,
-	window_decorations = "RESIZE", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
+	window_decorations = "INTEGRATED_BUTTONS", -- NONE | TITLE | RESIZE | INTEGRATED_BUTTONS
 	window_padding = {
-		left = 0,
+		left = 1,
 		right = 0,
-		top = 10,
+		top = 2,
 		bottom = 0,
 	},
 	audible_bell = "Disabled",
 	window_frame = {
 		font = wezterm.font({ family = "Roboto", weight = "Bold" }),
-		font_size = 13,
-		active_titlebar_bg = "#202123",
+		font_size = 12,
+		active_titlebar_bg = "#202125",
 		inactive_titlebar_bg = "#202123",
 		border_left_width = "0.0cell",
 		border_right_width = "0.0cell",
@@ -106,14 +98,14 @@ return {
 	window_close_confirmation = "NeverPrompt",
 	use_resize_increments = false,
 	-- Tab_bar
-	enable_tab_bar = false,
+	enable_tab_bar = true,
 	use_fancy_tab_bar = true,
 	tab_max_width = 50,
 	tab_bar_at_bottom = false,
 	-- colors
 	colors = {
 		tab_bar = {
-			background = "#1f1f28",
+			background = "#1f2f28",
 			active_tab = {
 				bg_color = "#35363A",
 				fg_color = "#e8eaed",

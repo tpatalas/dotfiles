@@ -120,11 +120,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 
-
 if [ -f ~/.dotfiles/.local/.aliases ]; then
   source ~/.dotfiles/.local/.aliases
 fi
-
 
 setopt correct
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -142,4 +140,8 @@ export NVM_DIR="$HOME/.nvm"
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
-export TERM=alacritty
+# export TERM=alacritty
+
+# Google Cloud SDK
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"

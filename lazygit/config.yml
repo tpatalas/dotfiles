@@ -27,6 +27,10 @@ git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:medium --oneline {{branchName}} --"
   skipHookPrefix: WIP
   parseEmoji: true
+commit:
+    signOff: false
+    autoWrapCommitMessage: true # automatic WYSIWYG wrapping of the commit message as you type
+    autoWrapWidth: 70 # if autoWrapCommitMessage is true, the width to wrap to
 customCommands:
   - key: "L"
     command: "git {{if .SelectedFile.HasUnstagedChanges}} diff --color {{.SelectedFile.Name}} {{else}} diff --staged --color {{.SelectedFile.Name}} {{end}} "
