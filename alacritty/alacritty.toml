@@ -7,17 +7,17 @@ import = ["~/.config/alacritty/custom_themes/material-deep-ocean.toml"]
 
 
 [env]
-TERM = "alacritty"
+TERM = "xterm-256color"
 
 
 [window]
-dimensions = { columns = 163, lines = 58 }
-position = { x = 1269, y = 471 }
-decorations = "None"                       # "Full" | "None" | "Transparent" | "Buttonless"
+# dimensions = { columns = 163, lines = 58 }
+# position = { x = 1269, y = 471 }
+decorations = "Buttonless"         # "Full" | "None" | "Transparent" | "Buttonless"
 decorations_theme_variant = "None"
 dynamic_title = true
 resize_increments = true
-opacity = 0.70
+opacity = 0.50
 blur = true
 # title = ""
 padding = { x = 0, y = 0 }
@@ -26,7 +26,7 @@ dynamic_padding = true
 
 [font]
 size = 13.0
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
