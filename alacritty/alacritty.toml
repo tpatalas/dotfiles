@@ -22,17 +22,18 @@ blur = true
 # title = ""
 padding = { x = 0, y = 0 }
 dynamic_padding = true
+startup_mode = "Windowed"  # "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
 
 
 [font]
-size = 13.0
-normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+size = 13
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 builtin_box_drawing = true
 offset = { x = 1, y = 1 }
-glyph_offset = { x = 0, y = 1 }
+glyph_offset = { x = 0, y = 0 }
 
 [colors]
 draw_bold_text_with_bright_colors = true
