@@ -44,3 +44,11 @@ style = { shape = 'Beam', blinking = "Always" }
 
 [mouse]
 hide_when_typing = true
+
+[keyboard]
+bindings = [
+  { key = "l", mods = "Command", command = { program = "sh", args = [
+    "-lc",
+    "ALACRITTY_CWD=$(pwd) alacritty -e zsh -c 'cd $ALACRITTY_CWD && lazygit'",
+  ] } },
+]
