@@ -13,6 +13,7 @@ gui:
     "test": "#db4b4b"
     "feature": "#b4f9f8"
     "to-do": "#646DA4"
+    "note": "#646DA4"
   authorColors:
     "*": "#636da6"
   showBranchCommitHash: true
