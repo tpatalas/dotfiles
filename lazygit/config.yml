@@ -13,6 +13,7 @@ gui:
     "test": "#db4b4b"
     "feature": "#b4f9f8"
     "to-do": "#646DA4"
+    "note": "#646DA4"
   authorColors:
     "*": "#636da6"
   showBranchCommitHash: true
@@ -78,7 +79,7 @@ customCommands:
     description: "Copy all merged commits messages with ticket number"
     context: "localBranches"
   - key: "<c-x>"
-    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --merges --pretty=format:"%h - %s" | sed "s/^[0-9a-f]* //" | pbcopy'
+    command: 'git log {{.SelectedLocalBranch.Name}}..HEAD --oneline --no-merges --pretty=format:"%s" | pbcopy '
     description: "Copy all merged commits messages"
     context: "localBranches"
   - key: "C"
