@@ -10,7 +10,7 @@ TERM = "xterm-256color"
 
 [window]
 dimensions = { columns = 163, lines = 60 }
-position = { x = 1268, y = 471 }
+position = { x = 1268, y = 480 }
 decorations = "None"                       # "Full" | "None" | "Transparent" | "Buttonless"
 decorations_theme_variant = "None"
 dynamic_title = true
