@@ -49,15 +49,17 @@ undercurl_style thin-dense
 # MacOS default: 1.7 30 | platform | legacy
 text_composition_strategy 1.7 0
 text_fg_override_threshold 0
-# cursor #cccccc
-# cursor_text_color #000000
+
+cursor #cccccc
+cursor_text_color #000000
 cursor_blink_interval -1
 cursor_stop_blinking_after 30.0
 cursor_beam_thickness 2
 
 scrollback_lines 2000
 mouse_hide_wait 2.0
-# url_color #0087bd
+
+url_color #0087bd
 url_style curly
 open_url_with default
 detect_urls yes
@@ -81,8 +83,8 @@ draw_minimal_borders no
 window_margin_width 0 0 0 0
 window_padding_width 0
 placement_strategy center
-# active_border_color none
-# inactive_border_color #cccccc
+active_border_color none
+inactive_border_color #cccccc
 hide_window_decorations titlebar-only
 resize_in_steps no
 confirm_os_window_close 0
@@ -98,54 +100,55 @@ tab_bar_min_tabs 1
 tab_title_max_length 20
 tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{index}:{title}"
 # active_tab_title_template "{index}:{title}"
-# active_tab_foreground   #7BC5C7
-# active_tab_background   #222436
+active_tab_foreground   #7BC5C7
+active_tab_background   #222436
 active_tab_font_style   bold
-# inactive_tab_foreground #758299
-# inactive_tab_background #222436
+inactive_tab_foreground #758299
+inactive_tab_background #222436
 # inactive_tab_font_style normal
-# tab_bar_background none
-# tab_bar_margin_color none
+tab_bar_background none
+tab_bar_margin_color none
 
 background_opacity 0.80
-background_blur 30
+background_blur 20
 dynamic_background_opacity no
 dim_opacity 1.0
-# background            #0F111A
-# foreground            #A6ACCD
-# selection_background  #1F2233
+background            #0F111A
+foreground            #A6ACCD
+selection_background  #1F2233
 # Black
-# color0                #000000
-# color8                #464B5D
+color0                #000000
+color8                #464B5D
 # Red
-# color1                #DC6068
-# color9                #F07178
+color1                #DC6068
+color9                #F07178
 # Green
-# color2                #ABCF76
-# color10               #C3E88D
+color2                #ABCF76
+color10               #C3E88D
 # Yellow
-# color3                #E6B455
-# color11               #FFCB6B
+color3                #E6B455
+color11               #FFCB6B
 # Blue
-# color4                #6E98EB
-# color12               #82AAFF
+color4                #6E98EB
+color12               #82AAFF
 # Magenta
-# color5                #B480D6
-# color13               #C792EA
+color5                #B480D6
+color13               #C792EA
 # Cyan
-# color6                #71C6E7
-# color14               #89DDFF
+color6                #71C6E7
+color14               #89DDFF
 # White
-# color7                #dddddd
-# color15               #EEFFFF
-# selection_foreground #A6ACCD
+color7                #dddddd
+color15               #EEFFFF
+selection_foreground #A6ACCD
 
 update_check_interval 0
 allow_hyperlinks yes
 show_hyperlink_targets yes
 shell_integration enabled
 term xterm-kitty
-# macos_titlebar_color system
+
+macos_titlebar_color system
 macos_thicken_font 0
 
 map cmd+c copy_to_clipboard
@@ -174,8 +177,3 @@ map shift+cmd+, load_config_file
 map cmd+shift+n select_tab
 map cmd+shift+r set_tab_title
 map cmd+l launch --cwd=current --type=tab sh -lc 'lazygit'
-
-# BEGIN_KITTY_THEME
-# Tokyo Night
-include current-theme.conf
-# END_KITTY_THEME
