@@ -9,8 +9,8 @@ import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]
 TERM = "xterm-256color"
 
 [window]
-dimensions = { columns = 163, lines = 60 }
-position = { x = 1268, y = 480 }
+dimensions = { columns = 187, lines = 63 }
+position = { x = 1268, y = 475 }
 decorations = "None"                       # "Full" | "None" | "Transparent" | "Buttonless"
 decorations_theme_variant = "None"
 dynamic_title = true
@@ -24,13 +24,13 @@ startup_mode = "Windowed"  # "Windowed" | "Maximized" | "Fullscreen" | "SimpleFu
 
 
 [font]
-size = 13
+size = 12
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 builtin_box_drawing = true
-offset = { x = 1, y = 1 }
+offset = { x = 0, y = 1 }
 glyph_offset = { x = 0, y = 0 }
 
 [colors]
