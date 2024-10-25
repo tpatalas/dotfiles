@@ -1,8 +1,3 @@
-# https://alacritty.org/config-alacritty.html
-# https://github.com/alacritty/alacritty-theme
-
-live_config_reload = true
-import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]
 
 
 [env]
@@ -43,6 +38,13 @@ style = { shape = 'Beam', blinking = "Always" }
 
 [mouse]
 hide_when_typing = true
+
+[general]
+# https://alacritty.org/config-alacritty.html
+# https://github.com/alacritty/alacritty-theme
+
+live_config_reload = true
+import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]
 
 # [keyboard]
 # bindings = [
