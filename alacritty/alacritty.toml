@@ -1,22 +1,16 @@
-# https://alacritty.org/config-alacritty.html
-# https://github.com/alacritty/alacritty-theme
-
-live_config_reload = true
-# import = ["~/.config/alacritty/themes/themes/rose-pine.toml"]
-import = ["~/.config/alacritty/custom_themes/material-deep-ocean.toml"]
 
 
 [env]
 TERM = "xterm-256color"
 
 [window]
-# dimensions = { columns = 163, lines = 58 }
-# position = { x = 1269, y = 471 }
-decorations = "Buttonless"         # "Full" | "None" | "Transparent" | "Buttonless"
+dimensions = { columns = 187, lines = 63 }
+position = { x = 1268, y = 475 }
+decorations = "None"                       # "Full" | "None" | "Transparent" | "Buttonless"
 decorations_theme_variant = "None"
 dynamic_title = true
 resize_increments = true
-opacity = 0.50
+opacity = 0.80
 blur = true
 # title = ""
 padding = { x = 0, y = 0 }
@@ -25,13 +19,13 @@ startup_mode = "Windowed"  # "Windowed" | "Maximized" | "Fullscreen" | "SimpleFu
 
 
 [font]
-size = 13
+size = 12
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 builtin_box_drawing = true
-offset = { x = 1, y = 1 }
+offset = { x = 0, y = 1 }
 glyph_offset = { x = 0, y = 0 }
 
 [colors]
@@ -45,10 +39,17 @@ style = { shape = 'Beam', blinking = "Always" }
 [mouse]
 hide_when_typing = true
 
-[keyboard]
-bindings = [
-  { key = "l", mods = "Command", command = { program = "sh", args = [
-    "-lc",
-    "ALACRITTY_CWD=$(pwd) alacritty -e zsh -c 'cd $ALACRITTY_CWD && lazygit'",
-  ] } },
-]
+[general]
+# https://alacritty.org/config-alacritty.html
+# https://github.com/alacritty/alacritty-theme
+
+live_config_reload = true
+import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]
+
+# [keyboard]
+# bindings = [
+#   { key = "l", mods = "Command", command = { program = "sh", args = [
+#     "-lc",
+#     "ALACRITTY_CWD=$(pwd) alacritty -e zsh -c 'cd $ALACRITTY_CWD && lazygit'",
+#   ] } },
+# ]
